@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-slate-50 text-slate-600 antialiased;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-display text-slate-900;
+        letter-spacing: -0.015em;
+    }
+
+    ::selection {
+        @apply bg-brand-100 text-brand-950;
+    }
+
+    :focus-visible {
+        outline: none;
+    }
+}
+
+@layer components {
+    .crs-page {
+        @apply mx-auto w-full max-w-[1500px] px-4 py-5 sm:px-6 sm:py-6 lg:px-8;
+    }
+
+    .crs-page-narrow {
+        @apply mx-auto w-full max-w-4xl px-4 py-5 sm:px-6 sm:py-6 lg:px-8;
+    }
+
+    .crs-card {
+        @apply rounded-xl border border-slate-200/90 bg-white shadow-card;
+    }
+
+    .crs-card-header {
+        @apply flex flex-col gap-2 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6;
+    }
+
+    .crs-card-title {
+        @apply text-[15px] font-semibold text-slate-900;
+    }
+
+    .crs-card-body {
+        @apply p-5 sm:p-6;
+    }
+
+    .crs-card-footer {
+        @apply flex flex-col-reverse gap-3 border-t border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-end sm:px-6;
+    }
+
+    .crs-eyebrow {
+        @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500;
+    }
+
+    .crs-table-wrap {
+        @apply overflow-x-auto rounded-xl border border-slate-200/90 bg-white shadow-card;
+    }
+
+    .crs-table {
+        @apply min-w-full divide-y divide-slate-200 text-sm;
+    }
+
+    .crs-thead {
+        @apply bg-slate-50/90;
+    }
+
+    .crs-th {
+        @apply whitespace-nowrap px-4 py-2.5 text-left text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500 sm:px-6;
+    }
+
+    .crs-td {
+        @apply px-4 py-3.5 text-sm text-slate-600 sm:px-6;
+    }
+
+    .crs-label {
+        @apply block text-sm font-medium text-slate-700;
+    }
+
+    .crs-input {
+        @apply block h-10 w-full min-w-0 rounded-lg border-slate-300 bg-white px-3 text-sm text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500;
+    }
+
+    .crs-select {
+        @apply block h-10 w-full min-w-0 rounded-lg border-slate-300 bg-white py-0 pl-3 pr-9 text-sm text-slate-900 shadow-sm transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500;
+    }
+
+    .crs-textarea {
+        @apply block w-full rounded-lg border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500;
+    }
+
+    .crs-help {
+        @apply mt-1.5 text-xs leading-5 text-slate-500;
+    }
+
+    .crs-link {
+        @apply rounded font-medium text-brand-700 underline-offset-2 transition hover:text-brand-900 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
+    }
+
+    .crs-danger-link {
+        @apply rounded font-medium text-rose-600 underline-offset-2 transition hover:text-rose-800 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2;
+    }
+
+    .crs-btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2.5 text-sm font-semibold leading-5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60;
+    }
+
+    .crs-btn-primary {
+        @apply bg-brand-700 text-white shadow-sm hover:bg-brand-800 focus-visible:ring-brand-500 active:bg-brand-900;
+    }
+
+    .crs-btn-secondary {
+        @apply border border-slate-300 bg-white text-slate-700 shadow-sm hover:bg-slate-50 focus-visible:ring-slate-400 active:bg-slate-100;
+    }
+
+    .crs-btn-ghost {
+        @apply text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus-visible:ring-slate-400;
+    }
+
+    .crs-btn-danger {
+        @apply bg-rose-600 text-white shadow-sm hover:bg-rose-700 focus-visible:ring-rose-500 active:bg-rose-800;
+    }
+
+    .crs-badge {
+        @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset;
+    }
+}
+
+.public-shell {
+    cursor: default;
+    caret-color: transparent;
+}
+
+.public-shell a,
+.public-shell button,
+.public-shell select,
+.public-shell summary,
+.public-shell [role='button'],
+.public-shell label[for] {
+    cursor: pointer;
+}
+
+.public-shell input:not([type='checkbox']):not([type='radio']),
+.public-shell textarea {
+    cursor: text;
+    caret-color: auto;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
